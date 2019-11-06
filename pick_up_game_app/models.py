@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Player(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="players")
     age = models.PositiveIntegerField(default=18)
     MALE = 'M'
     FEMALE = 'F'
@@ -30,7 +30,7 @@ class Player(models.Model):
     
 
     def __str__(self):
-        return self.name
+        return self.user.username
 
 class Event(models.Model):
     name = models.CharField(max_length=100)
@@ -48,8 +48,7 @@ class Event(models.Model):
         (SHOOT_AROUND, 'Shoot Around'),
     ]
     game_type = models.CharField(max_length=2, choices=TYPE_CHOICES)
+    player = models.ManyToManyField(Player)
 
     def __str__(self):
         return self.name 
-
-
