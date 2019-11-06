@@ -2,12 +2,32 @@
 
 {% block content %}
 <h1 class="profile-name">{{user.username}}</h1>
+
 <section>
-    <ul class="tracks">
-        <h2>Scheduled Games
-            {% if players %}
-            {% for player in players %}
-            <a href="{url 'event_detail' pk=player.pk %}"></a>
-        </h2>
+    <h2>Scheduled Games:</h2>
+    <ul>
+        <li>Game 1</li>
+        <li>Game 2</li>
+        <li>Game 3</li>
+    </ul>
+
+</section>
+
+<section>
+    <h2>Created Games:</h2>
+    <ul>
+        <li>Game 1</li>
+        <li>Game 2</li>
+        <li>Game 3</li>
     </ul>
 </section>
+
+<section>
+    <h2>Passed Games:</h2>
+    <ul>
+        <li>Game1</li>
+        <li>Game 2</li>
+        <li>Game 3</li>
+    </ul>
+</section>
+
