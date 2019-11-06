@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="form-section">
+    <form action="{% url 'register' %}" method="POST" class="register-form">
+    {% csrf_token %}
+        <p>
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" maxlength="25" minlength="2" required>
+        </p>
+        <p>
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" maxlength="25" minlength="2" required>
+        </p>
+        <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" maxlength="50" minlength="2" required>
+        </p>
+        <p>
+            <label for="username">Username</label>
+            <input type="text" name="username" maxlength="25" minlength="2" required>
+        </p>
+        <p>
+            <label for="password">Password</label>
+            <input type="password" name="password" maxlength="25" minlength="6" required>
+        </p>
+        <p>
+            <label for="password2">Confirm Password</label>
+            <input type="password" name="password2" maxlength="25" minlength="6" required>
+        </p>
+        <p>
+            <label for="age">Age</label>
+            <input type="number" for="age" name="age" required>
+        </p>
+        <p>
+            <label for="gender">Gender</label>
+            <input type="text" name="gender" required>
+        </p>
+        <p>
+            <label for="experience">Years of Experience</label>
+            <input type="number" name="experience">
+        </p>
+        <p>
+            <label for="pref_position">Preferred Position</label>
+            <input type="text" name="pref_position">
+        </p>
+        <button type='submit'> Sign Up</button>
+    </form>
+
+</section>
+
+{% endblock %}
