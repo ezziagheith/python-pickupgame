@@ -76,3 +76,9 @@ def logout(request):
     return redirect('home.html')
 
 
+# def profile(request):
+#     players = Player.objects.filter(user=request.user)
+#     events = Event.objects.filter(player)
+#     context = {'players': players}
+#     return render(request, 'profile.html', context)
+    
