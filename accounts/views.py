@@ -3,6 +3,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 
+from pick_up_game_app.models import Player, Event
+
 
 
 # Create your views here.
