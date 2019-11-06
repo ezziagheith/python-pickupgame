@@ -32,5 +32,24 @@ class Player(models.Model):
     def __str__(self):
         return self.name
 
+class Event(models.Model):
+    name = models.CharField(max_length=100)
+    date = models.DateField(auto_now=False, auto_now_add=False)
+    time = models.TimeField(auto_now=False, auto_now_add=False)
+    location = models.CharField(max_length=255)
+    FULL_COURT = 'FC'
+    HALF_COURT = 'HC'
+    ONE_VS_ONE = 'OO'
+    SHOOT_AROUND = 'SA'
+    TYPE_CHOICES = [
+        (FULL_COURT, 'Full Court: 5 vs 5'),
+        (HALF_COURT, 'Half Court: 3 vs 3'),
+        (ONE_VS_ONE, 'Half Court: 1 vs 1'),
+        (SHOOT_AROUND, 'Shoot Around'),
+    ]
+    game_type = models.CharField(max_length=2, choices=TYPE_CHOICES)
+
+    def __str__(self):
+        return self.name 
 
 
