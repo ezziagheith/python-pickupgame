@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Player(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="players")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="player")
     age = models.PositiveIntegerField(default=18)
     MALE = 'M'
     FEMALE = 'F'
