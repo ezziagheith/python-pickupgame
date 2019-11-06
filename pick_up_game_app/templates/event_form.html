@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="form-section">
+    <h1>{{header}}</h1>
+    <!-- {% if player.user == user %} -->
+    <!-- NOTE Add hyperlink to login before deployment -->
+    <!-- {% else %} -->
+        <!-- <p>Please login to create an event.</p> -->
+    <!-- {% endif %} -->
+
+    <form action="" method="POST" class="event-form">
+            {% csrf_token %}
+            {{form.as_p}}
+    
+            <button type="submit">Save</button>
+        </form>
+</section>
+
+{% endblock %}
