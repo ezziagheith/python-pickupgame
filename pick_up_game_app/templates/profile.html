@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 class="profile-name">{{user.username}}</h1>
+<section>
+    <ul class="tracks">
+        <h2>Scheduled Games
+            {% if players %}
+            {% for player in players %}
+            <a href="{url 'event_detail' pk=player.pk %}"></a>
+        </h2>
+    </ul>
+</section>
