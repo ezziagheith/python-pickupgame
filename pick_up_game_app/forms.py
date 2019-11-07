@@ -10,4 +10,4 @@ class EventForm(forms.ModelForm):
 class PlayerForm(forms.ModelForm):
     class Meta:
         model = Player
-        fields = ('user', 'age', 'gender', 'experience', 'pref_position')
+        fields = ( 'age', 'gender', 'experience', 'pref_position')
