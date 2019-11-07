@@ -1,0 +1,36 @@
+.button{
+    margin-right: 7px;
+}
+
+a{
+    color: #da532c !important;
+}
+
+.btn-outline-primary {
+    color: #da532c;
+    border-color: #da532c !important;
+}
+
+
+.kenny{
+    padding: 0px;
+    height: 400px;
+    /* background-size: cover; */
+    background-repeat: no-repeat;
+    background-position-y: -175px;
+    width: 100%;
+    margin-bottom: 0;
+    object-fit: cover;
+    
+}
+.jeremy {
+    height: 250px;
+}
+
+#signup:hover{
+    background-color: transparent;
+}
+
+#login:hover{
+    background-color: transparent;
+}
