@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
 
-from .models import Event, Player
+from .models import Event, Player, Event_Player
 from .forms import EventForm, PlayerForm
 
 # Create your views here.
