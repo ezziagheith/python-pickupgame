@@ -39,4 +39,4 @@ def player_create(request):
     context = {'form': form, 'header': "Add New Player"}
     return render(request, 'player_form.html', context)
 
-            
+

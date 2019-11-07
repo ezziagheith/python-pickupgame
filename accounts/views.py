@@ -78,9 +78,9 @@ def logout(request):
 
 def profile(request):
     # user = User.objects.filter(id=request.user.id)
-    # playerUser = player.user
+    playerUser = Event_Player.player_id
     # events = Event.objects.filter(playerUser =request.user)
-    userData = Event_Player.objects.filter(player=request.user)
+    userData = Event_Player.objects.filter(playerUser=request.user.player_id)
     context = {'userData': userData}
     return render(request, 'profile.html', context)
     
