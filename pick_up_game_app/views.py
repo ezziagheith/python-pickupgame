@@ -8,7 +8,7 @@ from .forms import EventForm
 
 # Create your views here.
 def home(request):
-    return HttpResponse('Updating home page')
+    return render(request,'landing.html')
 
 
 def event_create(request):
