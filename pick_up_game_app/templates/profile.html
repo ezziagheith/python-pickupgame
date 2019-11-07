@@ -1,43 +1,36 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<main>
 <h1 class="profile-name">{{user.username}}</h1>
 
-<section>
-    <h2>Scheduled Games:</h2>
-    <ul>
-        <li>Game 1</li>
-        <li>Game 2</li>
-        <li>Game 3</li>
-    </ul>
+    <section>
+        <h2>Scheduled Games:</h2>
+        <ul>
+            <li>Game 1</li>
+            <li>Game 2</li>
+            <li>Game 3</li>
+        </ul>
 
-</section>
+    </section>
+    
+    <section>
+        <h2>Past Games:</h2>
+        <ul>
+            <li>Game1</li>
+            <li>Game 2</li>
+            <li>Game 3</li>
+        </ul>
+    </section>
 
-<section>
-    <h2>Created Games:</h2>
-    <ul>
-        <li>Game 1</li>
-        <li>Game 2</li>
-        <li>Game 3</li>
-    </ul>
-</section>
+    <section>
+        <h2>User Info Test</h2>
+        <p>{{user.id}}</p>
+        <p>{{user.username}}</p>
+        <p>{{user.first_name}}</p>
+        <p>{{user.last_name}}</p>
+    </section>
 
-<section>
-    <h2>Passed Games:</h2>
-    <ul>
-        <li>Game1</li>
-        <li>Game 2</li>
-        <li>Game 3</li>
-    </ul>
-</section>
-
-<section>
-    <h2>User Info Test</h2>
-    <p>{{user.id}}</p>
-    <p>{{user.username}}</p>
-    <p>{{user.first_name}}</p>
-    <p>{{user.last_name}}</p>
-</section>
-
+</main>
 
 {% endblock %}

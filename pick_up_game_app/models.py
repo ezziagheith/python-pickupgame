@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Player(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="player")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="players")
     age = models.PositiveIntegerField(default=18)
     MALE = 'M'
     FEMALE = 'F'
@@ -54,5 +54,13 @@ class Event(models.Model):
 
 
 class Event_Player(models.Model):
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="events")
     player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name="events")
     event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="players")
+
+
+class Event_User(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="events")
+    # player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name="events")
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="users")
+    
