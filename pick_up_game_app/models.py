@@ -48,7 +48,11 @@ class Event(models.Model):
         (SHOOT_AROUND, 'Shoot Around'),
     ]
     game_type = models.CharField(max_length=2, choices=TYPE_CHOICES)
-    player = models.ManyToManyField(Player)
 
     def __str__(self):
         return self.name 
+
+
+class Event_Player(models.Model):
+    player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name="events")
+    event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="players")
