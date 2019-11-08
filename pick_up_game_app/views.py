@@ -64,14 +64,8 @@ def player_create(request):
 def event(request):
     return HttpResponse("Goodbye rocketshp. Hello Home.")
     
-def event_test(request,pk):
+
+def event_detail(request, pk):
     event_info = Event_User.objects.get(event=pk)
     context = {'event_info': event_info, 'header':'Test Header'}
     return render(request, 'event_info.html', context)
-    # return HttpResponse("Goodbye rocketshp. Hello Home.")
-
-# def event_details(request):
-# #     # event_info = Event_User.objects.get(event=pk)
-# #     # context = {'event_info': event_info, 'header':'Test Header'}
-# #     # return render(request, 'event_info.html', context)
-#     return HttpResponse("Goodbye rocketshp. Hello Home.")
