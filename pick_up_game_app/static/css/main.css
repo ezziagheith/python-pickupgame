@@ -58,3 +58,48 @@ a{
     height: 100%;
 }
 
+
+
+
+.image1{
+    width: 350px;
+    height: 274px;
+    left: 45px;
+    top: 735px;
+}
+
+.image2{
+    width: 350px;
+    height: 274px;
+    left: 45px;
+    top: 735px;
+}
+
+.image3{
+    width: 350px;
+    height: 274px;
+    left: 45px;
+    top: 735px;
+}
+
+
+.gymfloor{
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height: 75%;
+
+}
+
+.card-body{
+    position: relative;
+    z-index: 2;
+}
+
+.imageevent{
+    position: relative;
+    z-index: 2;
+    padding-top: 80px;
+}
+
