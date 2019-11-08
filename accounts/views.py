@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib import auth
 from django.http import HttpResponse, JsonResponse
 
-from pick_up_game_app.models import Player, Event, Event_Player
+from pick_up_game_app.models import Player, Event, Event_Player, Event_User
 
 
 
@@ -85,6 +85,11 @@ def profile(request):
     # context = {'userData': userData}
     # return render(request, 'profile.html', context)
 
+    user_events = Event_User.objects.filter(user=request.user)
+    # user_events = Event_User.objects.all()
+    # print(eventUser)
+    context = {'user_events': user_events}
+    return render(request, 'profile.html', context)
 
-    return HttpResponse("Profile Route working.")
+    # return HttpResponse("Profile Route working.")
     
