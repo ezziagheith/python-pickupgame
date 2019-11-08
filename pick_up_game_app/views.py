@@ -10,7 +10,6 @@ from .forms import EventForm, PlayerForm
 def home(request):
     return render(request,'landing.html')
 
-
 def event_create(request):
     if request.method == 'POST':
         form = EventForm(request.POST)
@@ -30,8 +29,6 @@ def event_create(request):
     context = {'form':form, 'header': "Add New Event"}
     return render(request, 'event_form.html', context)
 
-
-
 def player_create(request):
     if request.method == 'POST':
         form = PlayerForm(request.POST)
@@ -45,4 +42,17 @@ def player_create(request):
     context = {'form': form, 'header': "Add New Player"}
     return render(request, 'player_form.html', context)
 
+def event(request):
+    return HttpResponse("Goodbye rocketshp. Hello Home.")
+    
+def event_test(request,pk):
+    event_info = Event_User.objects.get(event=pk)
+    context = {'event_info': event_info, 'header':'Test Header'}
+    return render(request, 'event_info.html', context)
+    # return HttpResponse("Goodbye rocketshp. Hello Home.")
 
+# def event_details(request):
+# #     # event_info = Event_User.objects.get(event=pk)
+# #     # context = {'event_info': event_info, 'header':'Test Header'}
+# #     # return render(request, 'event_info.html', context)
+#     return HttpResponse("Goodbye rocketshp. Hello Home.")
