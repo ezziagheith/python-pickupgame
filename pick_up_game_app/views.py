@@ -38,6 +38,10 @@ def event_edit(request, pk):
         if form.is_valid():
             event = form.save()
             return redirect('event_detail', pk=event.pk)
+    else:
+        form=EventForm(instance=event)
+    context = {'form': form, 'header': f"Edit {event.name}"}
+    return render(request, 'event_form.html', context)
 
 
 
