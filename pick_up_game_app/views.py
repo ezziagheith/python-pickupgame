@@ -7,9 +7,8 @@ from .models import Event, Player, Event_Player, Event_User
 from .forms import EventForm, PlayerForm
 
 # Create your views here.
-def home(request):
+def landing(request):
     return render(request,'landing.html')
-
 
 def event_create(request):
     if request.method == 'POST':
@@ -23,12 +22,34 @@ def event_create(request):
                 event=event
             )
             event_user.save()
-            return redirect('event_detail', pk=event.pk)
-            
+            return redirect('event_detail', pk=event.pk)       
     else:
         form = EventForm()
     context = {'form':form, 'header': "Add New Event"}
     return render(request, 'event_form.html', context)
+
+
+
+
+def event_edit(request, pk):
+    event = Event.objects.get(id=pk)
+    if request.method == 'POST':
+        form = EventForm(request.POST, instance=event)
+        if form.is_valid():
+            event = form.save()
+            return redirect('profile')
+    else:
+        form=EventForm(instance=event)
+    context = {'form': form, 'header': f"Edit {event.name}"}
+    return render(request, 'event_form.html', context)
+
+
+def event_delete(request, pk):
+    Event.objects.get(id=pk).delete()
+    return redirect('profile')
+
+
+
 
 
 
@@ -50,4 +71,11 @@ def event_listAll(request):
     context = {"events": events}
     return render(request, 'events.html', context)
 
+def event(request):
+    return HttpResponse("Goodbye rocketshp. Hello Home.")
+    
 
+def event_detail(request, pk):
+    event_info = Event_User.objects.get(event=pk)
+    context = {'event_info': event_info, 'header':'Test Header'}
+    return render(request, 'event_info.html', context)
