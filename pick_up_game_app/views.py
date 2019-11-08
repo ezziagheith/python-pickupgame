@@ -7,7 +7,7 @@ from .models import Event, Player, Event_Player, Event_User
 from .forms import EventForm, PlayerForm
 
 # Create your views here.
-def home(request):
+def landing(request):
     return render(request,'landing.html')
 
 def event_create(request):
