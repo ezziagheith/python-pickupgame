@@ -172,3 +172,20 @@ a{
     0% {transform: rotate(0turn);}
     100% {transform: rotate(6turn);}
 }
+
+
+.image7{
+    z-index: 1;
+}
+
+
+.mygames{
+    z-index: 2;
+    position: relative;
+    bottom: 265px;
+    left: 75px;
+    color: white;
+    font-family: 'Bowlby One SC', cursive;
+    padding-top: 5px;
+}
+

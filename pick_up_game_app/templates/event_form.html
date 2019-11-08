@@ -1,20 +1,23 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 {% block content %}
 
+<main class="loginn">
+        <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
 <section class="form-section">
     <h1>{{header}}</h1>
-    <!-- {% if player.user == user %} -->
-    <!-- NOTE Add hyperlink to login before deployment -->
-    <!-- {% else %} -->
-        <!-- <p>Please login to create an event.</p> -->
-    <!-- {% endif %} -->
+
 
     <form action="" method="POST" class="event-form">
             {% csrf_token %}
             {{form.as_p}}
     
-        <button type="submit">Add Event</button>
+        <button type="submit">Save</button>
     </form>
 </section>
+</main>
 
 {% endblock %}
+
+
+
