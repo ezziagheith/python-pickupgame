@@ -2,7 +2,7 @@
 
 {% block content %}
 <main>
-<h1 class="profile-name">{{user.username}}</h1>
+<h1 class="profile-name">{{user_events.user.username}}</h1>
 
     <section>
         <h2>Scheduled Games:</h2>
@@ -25,10 +25,17 @@
 
     <section>
         <h2>User Info Test</h2>
-        <p>{{user.id}}</p>
-        <p>{{user.username}}</p>
-        <p>{{user.first_name}}</p>
-        <p>{{user.last_name}}</p>
+        {% for user_event in user_events %}
+        <!-- <h3>User Info</h3>
+        <p>Username: {{user_event.user.username}}</p>
+        <p>First Name: {{user_event.user.first_name}}</p>
+        <p>Last Name: {{user_event.user.last_name}}</p> -->
+
+        <h3>Game Details</h3>
+        <p>Event Name: {{user_event.event.name}}</p>
+        <p>Event Date: {{user_event.event.date}}</p>
+        <p>Event Time: {{user_event.event.time}}</p>
+        {% endfor %}
     </section>
 
 </main>
