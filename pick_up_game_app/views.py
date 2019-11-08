@@ -47,7 +47,7 @@ def player_create(request):
 
 def event_listAll(request):
     events = Event.objects.all()
-    context = {"events": event}
+    context = {"events": events}
     return render(request, 'events.html', context)
 
 
