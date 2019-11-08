@@ -61,7 +61,7 @@ def login(request):
         if user is not None:
             # login and create session
             auth.login(request, user)
-            return redirect('profile.html')
+            return redirect('profile')
         else:
             context = {'error': 'Invalid Credentials'}
             return render(request, 'login.html', context)
@@ -73,8 +73,7 @@ def login(request):
 
 def logout(request):
     auth.logout(request)
-    # ANCHOR Change html name
-    return redirect('home.html')
+    return redirect('landing')
 
 
 def profile(request):
