@@ -37,11 +37,16 @@ def event_edit(request, pk):
         form = EventForm(request.POST, instance=event)
         if form.is_valid():
             event = form.save()
-            return redirect('event_detail', pk=event.pk)
+            return redirect('profile')
     else:
         form=EventForm(instance=event)
     context = {'form': form, 'header': f"Edit {event.name}"}
     return render(request, 'event_form.html', context)
+
+
+def event_delete(request, pk):
+    Event.objects.get(id=pk).delete()
+    return redirect('profile')
 
 
 

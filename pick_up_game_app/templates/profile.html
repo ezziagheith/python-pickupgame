@@ -17,6 +17,7 @@
         <p>Event Date: {{user_event.event.date}}</p>
         <p>Event Time: {{user_event.event.time}}</p>
         <a href="{% url 'event_edit' pk=user_event.event.id %}" >Edit</a>
+        <a href="{% url 'event_delete' pk=user_event.event.id %}">Delete</a>
         {% endfor %}
     </section>
 
