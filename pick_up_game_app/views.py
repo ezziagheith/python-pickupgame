@@ -23,12 +23,25 @@ def event_create(request):
                 event=event
             )
             event_user.save()
-            return redirect('event_detail', pk=event.pk)
-            
+            return redirect('event_detail', pk=event.pk)       
     else:
         form = EventForm()
     context = {'form':form, 'header': "Add New Event"}
     return render(request, 'event_form.html', context)
+
+
+
+
+def event_edit(request, pk):
+    event = Event.objects.get(id=pk)
+    if request.method == 'POST':
+        form = EventForm(request.POST, instance=event)
+        if form.is_valid():
+            event = form.save()
+            return redirect('event_detail', pk=event.pk)
+
+
+
 
 
 
