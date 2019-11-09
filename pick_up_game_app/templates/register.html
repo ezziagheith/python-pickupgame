@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
-
-<section class="form-section">
+<main class="loginn">
+        <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
+<section class="form-section form-section12">
     <form action="{% url 'register' %}" method="POST" class="register-form">
     {% csrf_token %}
-        <p>
+    <h1 class="justtext notblock signup1">Sign Up</h1>
+    <img class="cat signup1" src="{% static '/images/volleyball.png' %}" alt="">
+        <p class="letstext">
             <label for="first_name">First Name</label>
             <input type="text" name="first_name" maxlength="25" minlength="2" required>
         </p>
@@ -46,9 +50,10 @@
             <label for="pref_position">Preferred Position</label>
             <input type="text" name="pref_position">
         </p> -->
-        <button type='submit'> Sign Up</button>
+        <button class="loginbutton subbutton" type='submit'> Sign Up</button>
     </form>
-
 </section>
+
+</main>
 
 {% endblock %}

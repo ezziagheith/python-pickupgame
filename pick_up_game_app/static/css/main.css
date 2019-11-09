@@ -45,6 +45,7 @@ a{
     border-radius: 20%;
     width: 300px;
     height: 250px;
+    border: 1px solid #da532c;
 }
 
 .center{
@@ -89,6 +90,7 @@ a{
     position: absolute;
     z-index: 1;
     height: 75%;
+    border: 1px solid #da532c;
 
 }
 
@@ -106,7 +108,7 @@ a{
 .loginn{
     display: flex;
     justify-content: center;
-    padding-top: 100px;
+    /* padding-top: 100px; */
 }
 
 .loginbutton{
@@ -160,7 +162,6 @@ a{
     padding: 50px;
     animation-name: rotate;
     animation-duration: 10s;
-    animation-delay: 2s;
 }
 
 @keyframe rotate{
@@ -189,3 +190,57 @@ a{
     padding-top: 5px;
 }
 
+ .pleasework{
+    margin-top: 40px;
+    padding: 20px;
+}
+
+#id_location{
+    margin-right: 100px;
+}
+
+.form-section{
+    margin-top: 175px;
+}
+
+
+.button8{
+    margin-top: 10px;
+    margin-left: 85px;
+    font-size: 20px;
+    color: #da532c;
+}
+
+
+.signup1{
+    margin-bottom: 15px;
+}
+
+.letstext{
+    padding: 5px;
+}
+
+.subbutton{
+    margin-left: 10px;
+}
+
+.form-section12{
+    margin-top: 75px;
+}
+
+.py-5 {
+    padding-top: 0 !important;
+}
+
+
+.upcoming{
+    text-align: center;
+    margin-top: 45px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #da532c;
+
+}
+
+.card{
+    border: 1px solid #da532c;
+}
