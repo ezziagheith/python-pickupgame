@@ -103,3 +103,89 @@ a{
     padding-top: 80px;
 }
 
+.loginn{
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+.loginbutton{
+    color: #da532c;
+    font-size: 25px;
+    margin-left: 100px;
+    margin-top: 10px;
+}
+
+.form-section{
+    z-index: 2;
+    margin-top: 75px;
+
+}
+
+.gymfloor1{
+    background-size: cover;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+
+}
+
+.justtext{
+    font-size: 50px;
+}
+
+.justtext1{
+    font-size: 25px;
+    padding-top: 10px;
+
+}
+
+.just5{
+    padding-right: 5px;
+}
+
+
+.notblock{
+    display: inline-block;
+}
+
+
+
+
+.cat{
+    position: relative;
+    z-index: 2;
+    width: 200px;
+    padding: 50px;
+    animation-name: rotate;
+    animation-duration: 10s;
+    animation-delay: 2s;
+}
+
+@keyframe rotate{
+    0% {transform: rotate(0turn);}
+    100% {transform: rotate(6turn);}
+}
+
+@-webkit-keyframes rotate{
+    0% {transform: rotate(0turn);}
+    100% {transform: rotate(6turn);}
+}
+
+
+.image7{
+    z-index: 1;
+}
+
+
+.mygames{
+    z-index: 2;
+    position: relative;
+    bottom: 265px;
+    left: 75px;
+    color: white;
+    font-family: 'Bowlby One SC', cursive;
+    padding-top: 5px;
+}
+
