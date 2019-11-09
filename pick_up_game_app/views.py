@@ -66,9 +66,10 @@ def player_create(request):
     context = {'form': form, 'header': "Add New Player"}
     return render(request, 'player_form.html', context)
 
-
 def event_listAll(request):
-    return render(request, 'event_list.html', context)
+    events = Event.objects.all()
+    context = {"events": events}
+    return render(request, 'events.html', context)
 
 def event(request):
     return HttpResponse("Goodbye rocketshp. Hello Home.")
