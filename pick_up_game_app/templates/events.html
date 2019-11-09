@@ -1,0 +1,35 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--------BootStrap------>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/events.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        {% block content %}
+        <section class="event-section">
+            {% for event in events%}
+            <div class="event-details" style="width: 18rem;">
+                <img src="{% static '/images/design3.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Event Name : {{ event.name }}</p>
+                    <p class="card-text">Location: {{ event.location }}</p>
+                    <p class="card-text">Date: {{ event.date }}</p>
+                    <p class="card-text">Time: {{ event.time }}</p>
+                    <a href="#" class="btn btn-primary">Details</a>
+                </div>
+                </div>
+            {% endfor %}
+        </section>
+        {% endblock %}
+    </main>
+</body>
+</html>
