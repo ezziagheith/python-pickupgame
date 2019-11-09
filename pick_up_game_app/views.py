@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
 
-from .models import Event, Player, Event_Player, Event_User
+from .models import Event, Player, Event_Player
 from .forms import EventForm, PlayerForm
 
 # Create your views here.
@@ -59,7 +59,7 @@ def player_create(request):
         if form.is_valid():
             player = form.save(commit=False)
             player.user = request.user
-            player.save()
+            artist.save()
             return redirect('profile.html', pk=player.pk)
     else:
         form = PlayerForm()
@@ -79,3 +79,4 @@ def event_detail(request, pk):
     event_info = Event_User.objects.get(event=pk)
     context = {'event_info': event_info, 'header':'Test Header'}
     return render(request, 'event_info.html', context)
+
