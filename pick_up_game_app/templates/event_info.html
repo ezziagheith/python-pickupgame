@@ -17,7 +17,8 @@
 
     <p>{{event_info.user}}</p>
 
-    <button type="submit">Join Game</button>
+    <!-- <button type="submit">Join Game</button> -->
+    <a href="{% url 'event_join' pk=event.pk %}">Join Game</a>
 </section>
 
 {% endblock %}

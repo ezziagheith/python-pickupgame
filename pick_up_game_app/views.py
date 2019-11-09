@@ -29,8 +29,6 @@ def event_create(request):
     return render(request, 'event_form.html', context)
 
 
-
-
 def event_edit(request, pk):
     event = Event.objects.get(id=pk)
     if request.method == 'POST':
@@ -48,9 +46,14 @@ def event_delete(request, pk):
     Event.objects.get(id=pk).delete()
     return redirect('profile')
 
-
-
-
+def event_join(request, pk):
+    event = Event.objects.get(id=pk)
+    event_user = Event_User.objects.create(
+        user=request.user, 
+        event=event
+    )
+    event_user.save()
+    return redirect('profile')
 
 
 def player_create(request):
