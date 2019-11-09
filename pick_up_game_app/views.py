@@ -80,3 +80,7 @@ def event_detail(request, pk):
     context = {'event_info': event_info, 'header':'Test Header'}
     return render(request, 'event_info.html', context)
 
+
+def about(request):
+    context = {'about': about, 'header': 'Test Header'}
+    return render(request, 'about.html', context)
