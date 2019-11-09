@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
 
@@ -7,19 +8,47 @@
 
     {% endif %}
 
+  
+
+<main class="loginn">
+        <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
     <section class="form-section">
-        <form action="{% url 'login' %}" method="POST">
-            {% csrf_token %}
-            <p>
-                <label for="username">Username</label>
-                <input type="text" name="username" maxlength="25" minlength="2" required>
-            </p>
-            <p>
-                <label for="password">Password</label>
-                <input type="password" name="password" maxlength="25" minlength="4" required>
-            </p>
-            <button type="submit">Login</button>
-        </form>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                <div class="text-center mb-4 justtext">
+                    <h1 class="h3 mb-3 font-weight-normal justtext notblock">Login</h1>
+                    <img class="cat" src="{% static '/images/volleyball.png' %}" alt="">
+
+                </div>
+                <p>
+                    <label class="justtext1" for="username">Username</label>
+                    <input type="text" name="username" maxlength="25" minlength="2" required>
+                </p>
+                <p>
+                    <label class="justtext1 just5" for="password">Password</label>
+                    <input type="password" name="password" maxlength="25" minlength="4" required>
+                </p>
+                <button class="loginbutton" type="submit">Login</button>
+            </form>
     </section>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% endblock %}

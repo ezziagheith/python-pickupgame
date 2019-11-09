@@ -1,6 +1,105 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
 
 {% block content %}
+
+
+<div class='jeremy'>
+    <img class="kenny" src="{% static '/images/bballback.jpg' %}" alt="Basketball Background">
+</div>
+
+
+<main>
+    <div class="container" id="howItWorks" style="margin-top:50px;width:100%;padding:0;text-align:center;">
+            <div class='headerbackground'>    
+                    <h3 class="landingHighImpact">Games start at your time</h3>
+                        <p class="text-center" style="font-size:30px;margin-bottom:5px;margin-top:20px">Sign up today and start hooping!
+                        </p>
+                    </div>
+        <div class="container pills" style="margin-top:10px;">
+
+            <div class="section-info" style="margin-bottom:0;margin-top:0;margin-bottom:5px;">
+                <div id="practice-info" style="padding-top:15px;">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="">
+                                <img class="howImage" src="{% static '/images/iphone.jpg' %}">
+                                <h3 class="center">Sign-up</h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="">
+                                <img class="howImage" src="{% static '/images/bballback1.jpg' %}">
+                                <h3 class="center">Reserve a spot</h3>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="">
+                            <img class="howImage" src="{% static '/images/bballback4.jpg' %}">
+                            <h3 class="center">Head to the gym</h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<h1>Upcoming Events</h1>
+
+<div class="album py-5 bg-light">
+    <img class="gymfloor" src="{% static '/images/woodfloor.jpg' %}" alt="">
+        <div class="container addback">
+          <div class="row">
+            <div class="col-md-4 imageevent">
+              <div class="card mb-4 shadow-sm">
+            <img class ="image1" src="{% static '/images/event42.jpg' %}" alt="five">
+        <div class="card-body">
+            <p class="card-text" class="design">5 vs. 5 Full Court</p>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div class="address">
+                    </div>
+                    <small class="text-muted">225 Bush St, San Francisco, CA 94104</small>
+                    <small class="text-muted">6:00 pm 11/15/19</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 imageevent">
+              <div class="card mb-4 shadow-sm">
+                <img class="image2" src="{% static '/images/shootaround.jpg' %}" alt="ball">
+                <div class="card-body">
+                  <p class="card-text" class="design">Shoot around</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="address">
+                    </div>
+                    <small class="text-muted">225 Bush St, San Francisco, CA 94104</small>
+                    <small class="text-muted">7:00 pm 11/15/19</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4 imageevent">
+              <div class="card mb-4 shadow-sm">
+                <img class="image3" src="{% static '/images/five.jpg' %}" alt="court">
+                <div class="card-body">
+                  <p class="card-text" class="design">3 vs. 3 Half Court</p>
+                  <div class="d-flex justify-content-between align-items-center">
+                    <div class="address">
+                    </div>
+                    <small class="text-muted">225 Bush St, San Francisco, CA 94104 </small>
+                    <small class="text-muted">8:00 pm 11/15/19</small>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+</div>
+</div>
+</div>
 
 
 {% endblock %}

@@ -1,36 +1,59 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
 
 {% block content %}
+
+
 <main>
-<h1 class="profile-name">{{user.username}}</h1>
 
-    <section>
-        <h2>Scheduled Games:</h2>
-        <ul>
-            <li>Game 1</li>
-            <li>Game 2</li>
-            <li>Game 3</li>
-        </ul>
+    <div class="album py-5 bg-light">
+            <h1 class="profile-name">{{user_events.user.username}}</h1>
+        <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
+            <div class="container">
+              <div class="row">
+                    {% for user_event in user_events %}
+                <div class="col-md-4 imageevent">
+                  <div class="mb-4 shadow-sm">
+                        <img class ="image1 image7" src="{% static '/images/eventbackground2.jpg' %}" alt="five">
+                        <h2 class="mygames">My Games</h2>
 
-    </section>
-    
-    <section>
-        <h2>Past Games:</h2>
-        <ul>
-            <li>Game1</li>
-            <li>Game 2</li>
-            <li>Game 3</li>
-        </ul>
-    </section>
+                
+                        <h5 class="mygames">Game Details</h5>
+                        <p class="mygames">Event Name: {{user_event.event.name}}</p>
+                        <p class="mygames">Event Date: {{user_event.event.date}}</p>
+                        <p class="mygames">Event Time: {{user_event.event.time}}</p>
+                        <a class="mygames" href="{% url 'event_edit' pk=user_event.event.id %}" >Edit</a>
+                        <a class="mygames" href="{% url 'event_delete' pk=user_event.event.id %}">Delete</a>
 
-    <section>
-        <h2>User Info Test</h2>
-        <p>{{user.id}}</p>
-        <p>{{user.username}}</p>
-        <p>{{user.first_name}}</p>
-        <p>{{user.last_name}}</p>
-    </section>
-
+                    
+                  </div>
+                </div>  
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 {% endblock %}
