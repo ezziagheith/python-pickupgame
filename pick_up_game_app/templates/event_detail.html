@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h2>{{header}}</h2>
+    <p>{{event_detail.name}}</p>
+    <p>{{event_detail.location}}</p>
+    <p>{{event_detail.date}}</p>
+    <p>{{event_detail.time}}</p>
+    <p>{{event_detail.game_type}}</p>
+    <p>{{event_detail.id}}</p>
+    
+
+    <!-- <button type="submit">Join Game</button> -->
+    <!-- <a href="{##% url 'event_join' pk=event_detail.event.id %}">Join Game</a> -->
+    <a href="{% url 'event_join' pk=event_detail.id %}">Join Game</a>
+</section>
+
+{% endblock %}
