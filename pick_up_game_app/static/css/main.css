@@ -244,3 +244,11 @@ a{
 .card{
     border: 1px solid #da532c;
 }
+
+
+
+.mission{
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+}
