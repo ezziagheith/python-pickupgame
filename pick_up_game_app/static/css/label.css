@@ -76,3 +76,49 @@ label {
     border-color: #da532c;
 }
 
+.aboutusbottom1{
+    position: relative;
+    left: 1000px;
+}
+
+
+.eventdetailshow{
+    position: relative;
+    z-index: 2;
+}
+
+
+.joingame{
+    border: 1px solid #da532c;
+    padding: 7px;
+    position: relative;
+    bottom: 450px;
+    left: 300px;
+    z-index: 2;
+}
+
+
+.mygames1{
+    z-index: 2;
+    position: relative;
+    bottom: 400px;
+    left: 75px;
+    color: white;
+    font-family: 'Bowlby One SC', cursive;
+    padding-top: 5px;
+}
+
+.image900{
+    width: 450px;
+    height: 300px;
+    left: 45px;
+    top: 735px;
+}
+
+.mygames700{
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    top: 75px;
+    border: 1px solid #da532c;
+}

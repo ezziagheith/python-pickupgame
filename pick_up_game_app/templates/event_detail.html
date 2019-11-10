@@ -2,25 +2,28 @@
 {% load staticfiles %}
 
 {% block content %}
-
-<section>
+<main>
+        <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
+<section class="eventdetailshow imageevent">
+        <img class ="image900 image7" src="{% static '/images/eventbackground2.jpg' %}" alt="five">
     <br>
     <br>
     <br>
     <br>
     <br>
-    <h2>{{header}}</h2>
-    <p>{{event_detail.name}}</p>
-    <p>{{event_detail.location}}</p>
-    <p>{{event_detail.date}}</p>
-    <p>{{event_detail.time}}</p>
-    <p>{{event_detail.game_type}}</p>
-    <p>{{event_detail.id}}</p>
+    <h5 class = "mygames1">{{header}}</h5>
+    <p class ="mygames1">{{event_detail.name}}</p>
+    <p class="mygames1">{{event_detail.location}}</p>
+    <p class ="mygames1">{{event_detail.date}}</p>
+    <p class ="mygames1">{{event_detail.time}}</p>
+    <p class="mygames1">{{event_detail.game_type}}</p>
+    <p class="mygames1">{{event_detail.id}}</p>
     
 
     <!-- <button type="submit">Join Game</button> -->
     <!-- <a href="{##% url 'event_join' pk=event_detail.event.id %}">Join Game</a> -->
-    <a href="{% url 'event_join' pk=event_detail.id %}">Join Game</a>
+    <a class="joingame" href="{% url 'event_join' pk=event_detail.id %}">Join Game</a>
 </section>
+</main>
 
 {% endblock %}
