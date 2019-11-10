@@ -3,7 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from django.contrib.auth.decorators import login_required
 
-from .models import Event, Player, Event_Player
+from .models import Event, Player, Event_Player, Event_User
 from .forms import EventForm, PlayerForm
 
 # Create your views here.
@@ -28,8 +28,14 @@ def event_create(request):
     context = {'form':form, 'header': "Add New Event"}
     return render(request, 'event_form.html', context)
 
-
-
+# def event_detail(request, pk):
+#     event_detail = Event_User.objects.get(event=pk)
+#     context = {'event_detail': event_detail, 'header':'Test Header'}
+#     return render(request, 'event_detail.html', context)
+def event_detail(request, pk):
+    event_detail = Event.objects.get(id=pk)
+    context = {'event_detail': event_detail, 'header': f"{event_detail.name} Details"}
+    return render(request, 'event_detail.html', context)
 
 def event_edit(request, pk):
     event = Event.objects.get(id=pk)
@@ -48,9 +54,14 @@ def event_delete(request, pk):
     Event.objects.get(id=pk).delete()
     return redirect('profile')
 
-
-
-
+def event_join(request, pk):
+    event = Event.objects.get(id=pk)
+    event_user = Event_User.objects.create(
+        user=request.user, 
+        event=event
+    )
+    event_user.save()
+    return redirect('profile')
 
 
 def player_create(request):
@@ -70,13 +81,4 @@ def event_listAll(request):
     events = Event.objects.all()
     context = {"events": events}
     return render(request, 'events.html', context)
-
-def event(request):
-    return HttpResponse("Goodbye rocketshp. Hello Home.")
-    
-
-def event_detail(request, pk):
-    event_info = Event_User.objects.get(event=pk)
-    context = {'event_info': event_info, 'header':'Test Header'}
-    return render(request, 'event_info.html', context)
 
