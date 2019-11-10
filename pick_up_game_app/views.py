@@ -82,3 +82,7 @@ def event_listAll(request):
     context = {"events": events}
     return render(request, 'events.html', context)
 
+
+def about(request):
+    return render(request, 'about.html', context)
+
