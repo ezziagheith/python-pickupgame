@@ -70,8 +70,8 @@ def player_create(request):
         if form.is_valid():
             player = form.save(commit=False)
             player.user = request.user
-            artist.save()
-            return redirect('profile.html', pk=player.pk)
+            player.save()
+            return redirect('profile')
     else:
         form = PlayerForm()
     context = {'form': form, 'header': "Add New Player"}
