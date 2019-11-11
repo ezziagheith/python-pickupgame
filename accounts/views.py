@@ -3,9 +3,12 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.http import HttpResponse, JsonResponse
+from pick_up_game_app.urls import addPlayer
 
 from pick_up_game_app.models import Player, Event, Event_Player, Event_User
 
+
+from django.contrib.auth import authenticate, login as auth_login
 
 # Create your views here.
 
@@ -37,7 +40,9 @@ def register(request):
                         first_name=first_name,
                         last_name=last_name)
                     user.save()
-                    return redirect('login')
+                    user_login = authenticate(username=username_form, password=password)
+                    auth_login(request, user_login)
+                    return redirect('addplayer')
         else:
             context = {'error': 'Passwords do not match.'}
             return render(request, 'register.html', context)
