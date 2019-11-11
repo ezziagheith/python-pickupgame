@@ -7,7 +7,6 @@ from django.http import HttpResponse, JsonResponse
 from pick_up_game_app.models import Player, Event, Event_Player, Event_User
 
 
-
 # Create your views here.
 
 def register(request):
@@ -85,9 +84,10 @@ def profile(request):
     # return render(request, 'profile.html', context)
 
     user_events = Event_User.objects.filter(user=request.user)
+    player = Player.objects.get(user=request.user)
     # user_events = Event_User.objects.all()
     # print(eventUser)
-    context = {'user_events': user_events}
+    context = {'user_events': user_events, 'player': player}
     return render(request, 'profile.html', context)
 
     # return HttpResponse("Profile Route working.")
