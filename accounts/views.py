@@ -7,6 +7,7 @@ from django.http import HttpResponse, JsonResponse
 from pick_up_game_app.models import Player, Event, Event_Player, Event_User
 
 
+from django.contrib.auth import authenticate, login as auth_login
 
 # Create your views here.
 
@@ -38,7 +39,10 @@ def register(request):
                         first_name=first_name,
                         last_name=last_name)
                     user.save()
-                    return redirect('login')
+                    # user_login = authenticate(username=username_form, password=password)
+                    # auth_login(request, user_login)
+                    # return redirect('addplayer')
+                    return redirect('profile')
         else:
             context = {'error': 'Passwords do not match.'}
             return render(request, 'register.html', context)
@@ -85,6 +89,7 @@ def profile(request):
     # return render(request, 'profile.html', context)
 
     user_events = Event_User.objects.filter(user=request.user)
+    # player = Player.objects.get(user=request.user)
     # user_events = Event_User.objects.all()
     # print(eventUser)
     context = {'user_events': user_events}
