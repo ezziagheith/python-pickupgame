@@ -18,15 +18,15 @@
             <div class="row">
                 {% for user_event in user_events %}
                 <div class="col-md-4 imageevent">
-                  <div class="mb-4 shadow-sm">
-                    <img class ="image1 image7" src="{% static '/images/eventbackground2.jpg' %}" alt="five">                
-                    <h5 class="mygames">Game Details</h5>
-                    <p class="mygames">Event Name: {{user_event.event.name}}</p>
-                    <p class="mygames">Event Date: {{user_event.event.date}}</p>
-                    <p class="mygames">Event Time: {{user_event.event.time}}</p>
-                    <a class="mygames" href="{% url 'event_edit' pk=user_event.event.id %}" >Edit</a>
-                    <a class="mygames" href="{% url 'event_delete' pk=user_event.event.id %}">Delete</a>         
-                  </div>
+                    <div class="mb-4 shadow-sm">
+                        <img class ="image1 image7" src="{% static '/images/eventbackground2.jpg' %}" alt="five">                
+                        <h5 class="mygames">Game Details</h5>
+                        <p class="mygames">Event Name: {{user_event.event.name}}</p>
+                        <p class="mygames">Event Date: {{user_event.event.date}}</p>
+                        <p class="mygames">Event Time: {{user_event.event.time}}</p>
+                        <a class="mygames" href="{% url 'event_edit' pk=user_event.event.id %}" >Edit</a>
+                        <a class="mygames" href="{% url 'event_delete' pk=user_event.event.id %}">Delete</a>         
+                    </div>
                 </div>  
                 {% endfor %}
             </div>

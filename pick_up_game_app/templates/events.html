@@ -4,7 +4,7 @@
 {% block content %}
 <body>
     <main>
-            <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
+        <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
         <section class="event-section">
             {% for event in events%}
             <div class="event-details" style="width: 18rem;">
@@ -16,11 +16,11 @@
                     <p class="card-text">Time: {{ event.time }}</p>
                     <a href= "{% url 'event_detail' event_slug=event.slug %}" class="btn btn-primary">Details</a>
                 </div>
-                </div>
+            </div>
             {% endfor %}
         </section>  
     </main>
 </body>
-</html>
+
 
 {% endblock %}

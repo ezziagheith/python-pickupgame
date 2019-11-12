@@ -6,7 +6,6 @@
     <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
     <section class="form-section">
         <h1>{{header}}</h1>
-
         <form action="" method="POST" class="player-form">
         {% csrf_token %}
         {{form.as_p}}
