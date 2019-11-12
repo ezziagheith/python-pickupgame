@@ -9,6 +9,8 @@ from pick_up_game_app.models import Player, Event, Event_Player, Event_User
 
 from django.contrib.auth import authenticate, login as auth_login
 
+from django.contrib.auth.decorators import login_required
+
 # Create your views here.
 
 def register(request):
@@ -79,7 +81,7 @@ def logout(request):
     auth.logout(request)
     return redirect('landing')
 
-
+@login_required
 def profile(request):
     # user = User.objects.filter(id=request.user.id)
     # playerUser = Event_Player.player_id
