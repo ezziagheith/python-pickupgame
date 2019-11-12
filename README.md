@@ -51,9 +51,9 @@
 
 
 ## Wireframes
-![Home Page](pick_up_game_app/static/wireframeimages/home.png)
+![Home Page](/pick_up_game_app/static/wireframeimages/home.png)
 ![Sign Up Page](/pick_up_game_app/static/wireframeimages/signup.png)
 ![Log In Page](/pick_up_game_app/static/wireframeimages/login.png)
-![Event Page](public/assets/wireframeimages/events.png)
-![Profile Page](public/assets/wireframeimages/profile.png)
-![About Us Page](public/assets/wireframeimages/aboutus.png)
+![Event Page](/public/assets/wireframeimages/events.png)
+![Profile Page](/public/assets/wireframeimages/profile.png)
+![About Us Page](/public/assets/wireframeimages/aboutus.png)
