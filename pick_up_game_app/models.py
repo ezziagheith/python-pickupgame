@@ -55,13 +55,11 @@ class Event(models.Model):
 
 
 class Event_Player(models.Model):
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="events")
     player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name="events")
     event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="players")
 
 
 class Event_User(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="events")
-    # player = models.ForeignKey(Player, on_delete=models.CASCADE, related_name="events")
     event = models.ForeignKey(Event, on_delete=models.CASCADE, related_name="users")
     

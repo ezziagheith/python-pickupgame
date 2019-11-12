@@ -1,3 +1,7 @@
+
+
+/* About Us Page */
+
 label {
     min-width: 140px;
 }
@@ -18,7 +22,6 @@ label {
 
 .abouthoopers{
     text-align: center;
-    /* border-bottom: 1px solid gray; */
 }
 
 
@@ -31,13 +34,6 @@ label {
 }
 
 
-.aboutback3{
-    /* align-items: center; */
-    /* display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: column; */
-}
 
 .aboutback1{
     width: 250px;
@@ -46,11 +42,10 @@ label {
     margin-top: 15px;
 }
 
+/* Event Details page */
 
 .event-section{
     display: flex;
-    /* grid-template-columns: 1fr 1fr 1fr;
-    grid-auto-rows: 25vh; */
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -123,14 +118,7 @@ label {
     border: 1px solid #da532c;
 }
 
-
-
-/* .addeventbutton{
-    position: relative;
-    z-index: 2;
-    top: 100px;
-    left: 100px;
-} */
+/* Profile Page */
 
 .profile-buttons{
     position: relative;
@@ -152,9 +140,6 @@ label {
     border: 1px solid #da532c;
 }
 
-/* .createplayer{
-    top: 300px;
-} */
 
 .mygames55{
     position: relative;
@@ -168,4 +153,10 @@ label {
 
 .alsoheader{
     color: #da532c;
+}
+
+/* Base Page */
+
+.welcomeuser{
+    color: white;
 }
