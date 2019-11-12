@@ -86,19 +86,6 @@ def player_create(request):
     context = {'form': form, 'header': "Add New Player"}
     return render(request, 'player_form.html', context)
 
-# def player_edit(request, pk):
-#     player = Player.objects.get(id=pk)
-#     if request.method == 'POST':
-#         form = PlayerForm(request.post, instance=player)
-#         if form.is_valid():
-#             player = form.save()
-#             return redirect('profile')
-#     else:
-#         form = PlayerForm(instance=player)
-#     context = {'form': form, 'header': f"Edit {player.user.username} Profile", 'player': 'player'}
-#     return render(request, 'player_form.html', context)
-
-
 
 def event_listAll(request):
     events = Event.objects.all()

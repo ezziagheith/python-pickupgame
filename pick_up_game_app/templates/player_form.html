@@ -3,17 +3,16 @@
 {% block content %}
 
 <main class="loginn">
-        <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
-<section class="form-section">
-    <h1>{{header}}</h1>
+    <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
+    <section class="form-section">
+        <h1>{{header}}</h1>
 
-    <form action="" method="POST" class="player-form">
+        <form action="" method="POST" class="player-form">
         {% csrf_token %}
         {{form.as_p}}
-
-        <button class="button8" type="submit">Save</button>
-    </form>
-</section>
+            <button class="button8" type="submit">Save</button>
+        </form>
+    </section>
 </main>
 
 {% endblock %}

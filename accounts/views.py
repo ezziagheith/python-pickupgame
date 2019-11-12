@@ -41,9 +41,6 @@ def register(request):
                         first_name=first_name,
                         last_name=last_name)
                     user.save()
-                    # user_login = authenticate(username=username_form, password=password)
-                    # auth_login(request, user_login)
-                    # return redirect('addplayer')
                     return redirect('login')
         else:
             context = {'error': 'Passwords do not match.'}
@@ -83,20 +80,10 @@ def logout(request):
 
 @login_required
 def profile(request):
-    # user = User.objects.filter(id=request.user.id)
-    # playerUser = Event_Player.player_id
-    # events = Event.objects.filter(playerUser =request.user)
-    # userData = Event_Player.objects.filter(playerUser=request.user.player_id)
-    # context = {'userData': userData}
-    # return render(request, 'profile.html', context)
-
     user_events = Event_User.objects.filter(user=request.user)
-    # player = Player.objects.get(user=request.user)
-    # user_events = Event_User.objects.all()
-    # print(eventUser)
     context = {'user_events': user_events}
     return render(request, 'profile.html', context)
 
-    # return HttpResponse("Profile Route working.")
+  
     
 
