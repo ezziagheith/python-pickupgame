@@ -48,6 +48,7 @@ class Event(models.Model):
         (SHOOT_AROUND, 'Shoot Around'),
     ]
     game_type = models.CharField(max_length=2, choices=TYPE_CHOICES)
+    slug = models.SlugField(max_length=100, editable=False)
 
     def __str__(self):
         return self.name 

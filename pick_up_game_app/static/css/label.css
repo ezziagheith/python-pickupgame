@@ -122,3 +122,50 @@ label {
     top: 75px;
     border: 1px solid #da532c;
 }
+
+
+
+/* .addeventbutton{
+    position: relative;
+    z-index: 2;
+    top: 100px;
+    left: 100px;
+} */
+
+.profile-buttons{
+    position: relative;
+    z-index: 2;
+    top: 75px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.profile-name{
+    position: relative;
+    z-index: 2;
+}
+
+.createdplayer{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    border: 1px solid #da532c;
+}
+
+/* .createplayer{
+    top: 300px;
+} */
+
+.mygames55{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 10px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+.alsoheader{
+    color: #da532c;
+}
