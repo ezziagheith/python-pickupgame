@@ -76,7 +76,6 @@ label {
 .event-details {
     width: 33%;
     border: 5px solid black;
-
 }
 
 .btn-primary {
@@ -135,9 +134,14 @@ label {
 
 /* Profile Page */
 
+.profilebackground {
+    background-image: url('static/images/woodfloor.jpg');
+    background-repeat: repeat-y;
+}
+
 .profile-buttons{
     position: relative;
-    z-index: 2;
+    z-index: 3;
     top: 75px;
     left: 10px;
     font-size: 20px;
@@ -179,5 +183,4 @@ label {
 .fixed-top{
     position: static;
 }
-
 
