@@ -12,6 +12,7 @@ from django.utils.text import slugify
 def landing(request):
     return render(request,'landing.html')
 
+@login_required
 def event_create(request):
     if request.method == 'POST':
         form = EventForm(request.POST)
@@ -36,11 +37,14 @@ def event_create(request):
 #     event_detail = Event_User.objects.get(event=pk)
 #     context = {'event_detail': event_detail, 'header':'Test Header'}
 #     return render(request, 'event_detail.html', context)
+
+@login_required
 def event_detail(request, event_slug):
     event_detail = Event.objects.get(slug=event_slug)
     context = {'event_detail': event_detail, 'header': f"{event_detail.name} Details"}
     return render(request, 'event_detail.html', context)
 
+@login_required
 def event_edit(request, pk):
     event = Event.objects.get(id=pk)
     if request.method == 'POST':
@@ -53,11 +57,12 @@ def event_edit(request, pk):
     context = {'form': form, 'header': f"Edit {event.name}"}
     return render(request, 'event_form.html', context)
 
-
+@login_required
 def event_delete(request, pk):
     Event.objects.get(id=pk).delete()
     return redirect('profile')
 
+@login_required
 def event_join(request, pk):
     event = Event.objects.get(id=pk)
     event_user = Event_User.objects.create(
@@ -67,7 +72,7 @@ def event_join(request, pk):
     event_user.save()
     return redirect('profile')
 
-
+@login_required
 def player_create(request):
     if request.method == 'POST':
         form = PlayerForm(request.POST)
