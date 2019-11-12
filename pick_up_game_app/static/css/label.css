@@ -121,6 +121,11 @@ label {
 
 /* Profile Page */
 
+.profilebackground {
+    background-image: url('images/woodfloor.jpg');
+    background-repeat: repeat-y;
+}
+
 .profile-buttons{
     position: relative;
     z-index: 2;
