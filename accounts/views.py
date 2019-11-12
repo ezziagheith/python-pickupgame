@@ -42,7 +42,7 @@ def register(request):
                     # user_login = authenticate(username=username_form, password=password)
                     # auth_login(request, user_login)
                     # return redirect('addplayer')
-                    return redirect('profile')
+                    return redirect('login')
         else:
             context = {'error': 'Passwords do not match.'}
             return render(request, 'register.html', context)
