@@ -3,7 +3,6 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.http import HttpResponse, JsonResponse
-from pick_up_game_app.urls import addPlayer
 
 from pick_up_game_app.models import Player, Event, Event_Player, Event_User
 
@@ -40,9 +39,10 @@ def register(request):
                         first_name=first_name,
                         last_name=last_name)
                     user.save()
-                    user_login = authenticate(username=username_form, password=password)
-                    auth_login(request, user_login)
-                    return redirect('addplayer')
+                    # user_login = authenticate(username=username_form, password=password)
+                    # auth_login(request, user_login)
+                    # return redirect('addplayer')
+                    return redirect('login')
         else:
             context = {'error': 'Passwords do not match.'}
             return render(request, 'register.html', context)
@@ -89,10 +89,10 @@ def profile(request):
     # return render(request, 'profile.html', context)
 
     user_events = Event_User.objects.filter(user=request.user)
-    player = Player.objects.get(user=request.user)
+    # player = Player.objects.get(user=request.user)
     # user_events = Event_User.objects.all()
     # print(eventUser)
-    context = {'user_events': user_events, 'player': player}
+    context = {'user_events': user_events}
     return render(request, 'profile.html', context)
 
     # return HttpResponse("Profile Route working.")
