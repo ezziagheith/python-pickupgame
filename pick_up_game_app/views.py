@@ -6,6 +6,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Event, Player, Event_Player, Event_User
 from .forms import EventForm, PlayerForm
 
+from django.utils.text import slugify
+
 # Create your views here.
 def landing(request):
     return render(request,'landing.html')
@@ -16,13 +18,15 @@ def event_create(request):
         if form.is_valid():
             event = form.save(commit=False)
             event.user = request.user
+            event.slug_string = f"{event.name}-{event.date}-{event.location}"
+            event.slug = slugify(event.slug_string)
             event.save()
             event_user = Event_User.objects.create(
                 user=request.user,
                 event=event
             )
             event_user.save()
-            return redirect('event_detail', pk=event.pk)       
+            return redirect('event_detail', slug=event.slug)       
     else:
         form = EventForm()
     context = {'form':form, 'header': "Add New Event"}
@@ -32,8 +36,8 @@ def event_create(request):
 #     event_detail = Event_User.objects.get(event=pk)
 #     context = {'event_detail': event_detail, 'header':'Test Header'}
 #     return render(request, 'event_detail.html', context)
-def event_detail(request, pk):
-    event_detail = Event.objects.get(id=pk)
+def event_detail(request, event_slug):
+    event_detail = Event.objects.get(slug=event_slug)
     context = {'event_detail': event_detail, 'header': f"{event_detail.name} Details"}
     return render(request, 'event_detail.html', context)
 

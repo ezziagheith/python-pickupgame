@@ -89,10 +89,10 @@ def profile(request):
     # return render(request, 'profile.html', context)
 
     user_events = Event_User.objects.filter(user=request.user)
-    player = Player.objects.get(user=request.user)
+    # player = Player.objects.get(user=request.user)
     # user_events = Event_User.objects.all()
     # print(eventUser)
-    context = {'user_events': user_events, 'player': player}
+    context = {'user_events': user_events}
     return render(request, 'profile.html', context)
 
     # return HttpResponse("Profile Route working.")
