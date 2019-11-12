@@ -18,7 +18,7 @@ def event_create(request):
         if form.is_valid():
             event = form.save(commit=False)
             event.user = request.user
-            event.slug_string = f"{event.name}-{event.date}-{event.location}"
+            event.slug_string = f"{event.name}-{event.location}"
             event.slug = slugify(event.slug_string)
             event.save()
             event_user = Event_User.objects.create(
