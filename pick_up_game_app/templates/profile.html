@@ -6,64 +6,32 @@
 
 <main>
     <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
-    <!-- <div class='profilebackground'> -->
-    <!-- <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt=""> -->
-        <h2 class="mygames700">My Games</h2>
-        <div class="profile-buttons">
-            <button><a class="addeventbutton" href="{% url 'event_create' %}">Add Event</a></button> 
-            <button><a href="{% url 'player_create' %}">Edit Profile</a></button> 
-        </div>
-
-        <div class="album py-5 bg-light">
-            <h1 class="profile-name">{{user_events.user.username}}</h1>
-            <!-- <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt=""> -->
-            <div class="container">
-                <div class="row">
-                    {% for user_event in user_events %}
-                    <div class="col-md-4 imageevent">
-                    <div class="mb-4 shadow-sm">
-                        <img class ="image1 image7" src="{% static '/images/eventbackground2.jpg' %}" alt="five">                
-                        <h5 class="mygames">Game Details</h5>
-                        <p class="mygames">Event Name: {{user_event.event.name}}</p>
-                        <p class="mygames">Event Date: {{user_event.event.date}}</p>
-                        <p class="mygames">Event Time: {{user_event.event.time}}</p>
-                        <a class="mygames" href="{% url 'event_edit' pk=user_event.event.id %}" >Edit</a>
-                        <a class="mygames" href="{% url 'event_delete' pk=user_event.event.id %}">Delete</a>         
-                    </div>
-                    </div>  
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-
-    <!-- Creating Player -->
-
-
-        <h2 class="createdplayer">My Profile</h2>
-        <div class="album py-5 bg-light createplayer">
-            <!-- <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt=""> -->
-            <div class="container">
-                <div class="row">
-                    {% for user_player in user_players %}
-                    <div class="col-md-4 imageevent">
-                        <div class="mb-4 shadow-sm">            
-                            <h5 class="mygames55 alsoheader">Player Details</h5>
-                            <p class="mygames55">Age: {{user_player.player.age}}</p>
-                            <p class="mygames55">Gender: {{user_player.player.gender}}</p>
-                            <p class="mygames55">Experience: {{user_player.player.experience}}</p>
-                            <p class="mygames55">Preferred Position: {{user_player.player.pref_position}}</p>                
-                        </div>
-                    </div>  
-                {% endfor %}
-                </div>
-            </div>
-        </div>
-
-    <!-- End profile background -->
+    <h2 class="mygames700">My Games</h2>
+    <div class="profile-buttons">
+        <button><a class="addeventbutton" href="{% url 'event_create' %}">Add Event</a></button> 
+        <button><a href="{% url 'player_create' %}">Edit Profile</a></button> 
     </div>
 
-
-
+    <div class="album py-5 bg-light">
+        <h1 class="profile-name">{{user_events.user.username}}</h1>
+        <div class="container">
+            <div class="row">
+                {% for user_event in user_events %}
+                <div class="col-md-4 imageevent">
+                  <div class="mb-4 shadow-sm">
+                    <img class ="image1 image7" src="{% static '/images/eventbackground2.jpg' %}" alt="five">                
+                    <h5 class="mygames">Game Details</h5>
+                    <p class="mygames">Event Name: {{user_event.event.name}}</p>
+                    <p class="mygames">Event Date: {{user_event.event.date}}</p>
+                    <p class="mygames">Event Time: {{user_event.event.time}}</p>
+                    <a class="mygames" href="{% url 'event_edit' pk=user_event.event.id %}" >Edit</a>
+                    <a class="mygames" href="{% url 'event_delete' pk=user_event.event.id %}">Delete</a>         
+                  </div>
+                </div>  
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </main>
 
 
