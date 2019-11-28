@@ -1,0 +1,1 @@
+web: gunicorn pick_up_game.wgsi --log-file -
