@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<main class="loginn">
+    <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
+    <section class="form-section form-section12">
+        <form action="{% url 'register' %}" method="POST" class="register-form">
+            {% csrf_token %}
+            <h1 class="justtext notblock signup1">Sign Up</h1>
+            <img class="cat signup1" src="{% static '/images/volleyball.png' %}" alt="">
+            <p class="letstext">
+                <label for="first_name">First Name</label>
+                <input type="text" name="first_name" maxlength="25" minlength="2" required>
+            </p>
+            <p>
+                <label for="last_name">Last Name</label>
+                <input type="text" name="last_name" maxlength="25" minlength="2" required>
+            </p>
+            <p>
+                <label for="email">Email</label>
+                <input type="email" name="email" maxlength="50" minlength="2" required>
+            </p>
+            <p>
+                <label for="username">Username</label>
+                <input type="text" name="username" maxlength="25" minlength="2" required>
+            </p>
+            <p>
+                <label for="password">Password</label>
+                <input type="password" name="password" maxlength="25" minlength="6" required>
+            </p>
+            <p>
+                <label for="password2">Confirm Password</label>
+                <input type="password" name="password2" maxlength="25" minlength="6" required>
+            </p>
+            <button class="loginbutton subbutton" type='submit'> Sign Up</button>
+        </form>
+    </section>
+</main>
+
+{% endblock %}

@@ -1,0 +1,196 @@
+
+
+/* About Us Page */
+
+label {
+    min-width: 140px;
+}
+
+
+.aboutback{
+    padding: 0px;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position-y: -175px;
+    width: 100%;
+    margin-bottom: 0;
+    object-fit: cover;
+    z-index: 1;
+
+}
+
+
+.abouthoopers{
+    text-align: center;
+}
+
+
+.ballforall{
+    text-align: center;
+}
+
+.ballforall1{
+    border: 1px solid #da532c;
+}
+
+.aboutback1{
+    width: 300px;
+    height: 300px;
+    margin-left: 150px;
+    margin-top: 15px;
+}
+
+.aboutusbottom1{
+    position: relative;
+    left: 1000px;
+}
+
+.aboutback1{
+    border: 1px solid gray;
+}
+
+.statement{
+    margin-top: 8px;
+    padding-top: 5px;
+    text-align: center;
+    border: 1px solid #da532c;
+}
+
+.statement1{
+    text-align: center;
+}
+
+/* Event Details page */
+
+.event-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2em;
+    z-index: 3;
+    position: relative;
+}
+
+.event-details {
+    width: 33%;
+    border: 5px solid black;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: white;
+    border-color: #da532c;
+}
+
+.btn-primary:hover{
+    background-color: transparent;
+    border-color: #da532c;
+}
+
+
+.eventdetailshow{
+    position: relative;
+    z-index: 2;
+}
+
+
+.joingame{
+    border: 1px solid #da532c;
+    padding: 7px;
+    position: relative;
+    bottom: 450px;
+    left: 300px;
+    z-index: 2;
+}
+
+
+.mygames1{
+    z-index: 3;
+    position: relative;
+    bottom: 400px;
+    left: 75px;
+    color: white;
+    font-family: 'Bowlby One SC', cursive;
+    padding-top: 5px;
+    
+}
+
+.image900{
+    width: 450px;
+    height: 300px;
+    left: 45px;
+    top: 735px;
+}
+
+.mygames700{
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    top: 75px;
+    border: 1px solid #da532c;
+}
+
+.eventdetailcard {
+    margin-left: 25px;
+}
+.event-detail-text{
+    position: relative;
+    z-index: 3;
+    top: 110px;
+}
+
+
+/* Profile Page */
+
+.profilebackground {
+    background-image: url('static/images/woodfloor.jpg');
+    background-repeat: repeat-y;
+}
+
+.profile-buttons{
+    position: relative;
+    z-index: 3;
+    top: 75px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.profile-name{
+    position: relative;
+    z-index: 2;
+}
+
+.createdplayer{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    border: 1px solid #da532c;
+}
+
+
+.mygames55{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    top: 10px;
+    font-size: 30px;
+    color: white;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+.alsoheader{
+    color: #da532c;
+}
+
+/* Base Page */
+
+.welcomeuser{
+    color: white;
+}
+
+.fixed-top{
+    position: static;
+}
+
