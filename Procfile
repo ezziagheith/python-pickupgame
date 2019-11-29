@@ -1,1 +1,1 @@
-web: gunicorn pickupgame.wgsi --log-file -
+web:gunicorn pickupgame.wgsi --log-file -
