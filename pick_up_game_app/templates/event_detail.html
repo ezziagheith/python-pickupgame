@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+
+
+<main>
+    <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
+    <div class="eventdetailcard">
+    <section class="eventdetailshow imageevent">
+        <img class ="image900 image7" src="{% static '/images/eventbackground2.jpg' %}" alt="five">
+        <div class="event-detail-text">
+            <h5 class = "mygames1">{{header}}</h5>
+            <p class ="mygames1">{{event_detail.name}}</p>
+            <p class="mygames1">{{event_detail.location}}</p>
+            <p class ="mygames1">{{event_detail.date}}</p>
+            <p class ="mygames1">{{event_detail.time}}</p>
+            <p class="mygames1">{{event_detail.game_type}}</p>
+            <a class="joingame" href="{% url 'event_join' pk=event_detail.id %}">Join Game</a>
+        </div>
+    </section>
+    </div>
+</main>
+
+{% endblock %}

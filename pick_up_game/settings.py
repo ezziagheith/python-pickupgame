@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pick_up_game_app'
+    'pick_up_game_app',
+    'accounts',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content %}
+<body>
+    <main>
+        <img class="gymfloor1" src="{% static '/images/woodfloor.jpg' %}" alt="">
+        <section class="event-section">
+            {% for event in events%}
+            <div class="event-details" style="width: 18rem;">
+                <img src="{% static '/images/design3.png' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">Event Name : {{ event.name }}</p>
+                    <p class="card-text">Location: {{ event.location }}</p>
+                    <p class="card-text">Date: {{ event.date }}</p>
+                    <p class="card-text">Time: {{ event.time }}</p>
+                    <a href= "{% url 'event_detail' event_slug=event.slug %}" class="btn btn-primary">Details</a>
+                </div>
+            </div>
+            {% endfor %}
+        </section>  
+    </main>
+</body>
+
+
+{% endblock %}

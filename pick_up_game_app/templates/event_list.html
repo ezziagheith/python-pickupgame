@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<ul class="events">
+    {% for event in events %}
+    <a href="{% url 'event_detail' %}">
+        <li class="Event">
+            <img src="" alt="">
+        </li>
+    </a>
+    {% endfor %}
+</ul>
+
+{% endblock %}
